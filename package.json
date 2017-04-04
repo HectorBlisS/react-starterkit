@@ -4,9 +4,9 @@
   "description": "BlisS js fatigue reducer",
   "main": "index.js",
   "scripts": {
-    "prestart": "node tools/startMessage.js",
+    "prestart": "babel-node tools/startMessage.js",
     "start": "npm run share",
-    "open:src": "node tools/srcServer.js",
+    "open:src": "babel-node tools/srcServer.js",
     "localtunnel": "lt --port 8000 --subdomain bliss",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
@@ -24,10 +24,16 @@
   },
   "homepage": "https://github.com/HectorBlisS/react-starterkit#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
     "colors": "^1.1.2",
     "express": "^4.15.2",
     "npm-run-all": "^4.0.2",
     "open": "0.0.5",
     "path": "^0.12.7"
-  }
+  },
+  "dependencies": {}
 }
