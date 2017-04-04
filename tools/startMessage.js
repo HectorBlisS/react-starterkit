@@ -2,4 +2,4 @@
 //babel-node
 import colors from 'colors';
 
-console.log("Levantando el App, aguanta un poco...".green);
+console.log("Levantando el App, aguanta un poco...".green); //eslint-disable-line no-console

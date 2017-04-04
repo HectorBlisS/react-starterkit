@@ -21,7 +21,8 @@ export default {
         test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']
       },
       {
-        test: /\.css$/, loaders: ['style-loader','css-loader?modules&localIdentName=[local]---[hash:base64:5]']
+        // test: /\.css$/, loaders: ['style-loader','css-loader?modules&localIdentName=[local]---[hash:base64:5]']
+        test: /\.css$/, loaders: ['style-loader','css-loader']
       },
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
@@ -33,4 +34,4 @@ export default {
     new webpack.HotModuleReplacementPlugin()
   ],
   watch: true
-}
+};

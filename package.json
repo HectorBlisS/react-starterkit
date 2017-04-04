@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm run share",
+    "start": "npm-run-all --parallel share lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "localtunnel": "lt --port 8000 --subdomain bliss",
-    "share": "npm-run-all --parallel open:src localtunnel"
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,10 @@
     "bootstrap": "^3.3.7",
     "colors": "1.1.2",
     "css-loader": "0.28.0",
+    "eslint": "2.9.0",
+    "eslint-plugin-import": "1.6.1",
+    "eslint-plugin-react": "5.0.1",
+    "eslint-watch": "2.1.11",
     "express": "4.15.2",
     "file-loader": "^0.11.1",
     "npm-run-all": "4.0.2",
