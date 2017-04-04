@@ -1,0 +1,33 @@
+{
+  "name": "react-starterkit",
+  "version": "1.0.0",
+  "description": "BlisS js fatigue reducer",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "node tools/startMessage.js",
+    "start": "npm run share",
+    "open:src": "node tools/srcServer.js",
+    "localtunnel": "lt --port 8000 --subdomain bliss",
+    "share": "npm-run-all --parallel open:src localtunnel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HectorBlisS/react-starterkit.git"
+  },
+  "keywords": [
+    "Fixter"
+  ],
+  "author": "HéctorBlisS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HectorBlisS/react-starterkit/issues"
+  },
+  "homepage": "https://github.com/HectorBlisS/react-starterkit#readme",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.15.2",
+    "npm-run-all": "^4.0.2",
+    "open": "0.0.5",
+    "path": "^0.12.7"
+  }
+}
