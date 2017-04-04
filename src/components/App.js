@@ -3,7 +3,7 @@ import React from 'react';
 class App extends React.Component {
   render(){
     return(
-      <div className="">
+      <div className="container-fluid">
         <p>Header</p>
         {this.props.children}
       </div>
