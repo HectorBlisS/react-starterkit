@@ -6,7 +6,11 @@ class App extends React.Component {
   render(){
     return(
       <div className="container-fluid">
+        <Link to="/" >Home</Link>
+        <span> | </span>
         <Link to="the-users" >Usuarios</Link>
+
+
         {this.props.children}
       </div>
     );
