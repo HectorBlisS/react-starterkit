@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel share lint:watch",
+    "start": "npm-run-all --parallel share lint:watch start-mockapi",
     "open:src": "babel-node tools/srcServer.js",
     "localtunnel": "lt --port 8000 --subdomain bliss",
     "share": "npm-run-all --parallel open:src localtunnel",
     "lint": "node_modules/.bin/esw webpack.config.* src tools --color",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "generate-mock-data": "babel-node tools/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "repository": {
     "type": "git",
