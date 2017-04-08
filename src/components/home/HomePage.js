@@ -1,5 +1,6 @@
 import React from 'react';
-import css from './homePage.css';
+import './homePage.css';
+// import TypeForm from 'react-typeform';
 
 
 class HomePage extends React.Component {
