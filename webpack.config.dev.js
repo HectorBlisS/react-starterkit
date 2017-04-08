@@ -1,5 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+
 
 export default {
   debug: true,
@@ -31,6 +33,11 @@ export default {
     ]
   },
   plugins: [
+    // create HTML file that includes reference to bundled JS.
+     new HtmlWebpackPlugin({
+       template: 'src/index.html',
+       inject: true
+     }),
     new webpack.HotModuleReplacementPlugin()
   ],
   watch: true
