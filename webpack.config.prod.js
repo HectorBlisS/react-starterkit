@@ -7,15 +7,15 @@ export default {
   debug: true,
   devtool: 'source-map',
   noInfo: false,
-  entry: [
-    'webpack-hot-middleware/client?reload=true', //hot reloading
-    path.resolve(__dirname, 'src/index')
-  ],
+  entry: {
+    vendor: path.resolve(__dirname, 'src/vendor'),
+    main: path.resolve(__dirname, 'src/index')
+},
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -33,6 +33,10 @@ export default {
     ]
   },
   plugins: [
+    // use common chunk plugin to create a separate bundle
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }),
     // create HTML file that includes reference to bundle JS.
     new HtmlWebpackPlugin({
       template: 'src/index.html',
