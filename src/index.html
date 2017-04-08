@@ -1,6 +1,18 @@
+<!--
+**NOTE** este tipo de template es EJS que uso para agregar
+un token solo al index de producción
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+
+  <!-- BEGIN TRACKJS -->
+  <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken %>' };</script>
+  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+  <!-- END TRACKJS -->
+  <% } %>
     <meta charset="UTF-8">
     <title>StarterKit</title>
 </head>
